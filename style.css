@@ -1,0 +1,589 @@
+/* إعدادات الألوان والمتغيرات */
+:root {
+    --bg-color: #0f172a; /* أزرق داكن جداً يميل للسواد */
+    --text-main: #f8fafc; /* أبيض ناصع للنصوص */
+    --text-muted: #94a3b8; /* رمادي فاتح للنصوص الثانوية */
+    --accent-color: #10b981; /* أخضر زمردي مميز */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* تصميم شريط التنقل */
+/* تصميم شريط التنقل (احترافي ومحسن) */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 8%;
+    /* تأثير الزجاج */
+    background-color: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: all 0.3s ease;
+}
+
+/* توحيد لون اللوغو وجعله قابلاً للضغط */
+.logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--text-main);
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+/* تأثير الخط المتحرك تحت الروابط */
+.nav-links a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.05rem;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* تصميم الواجهة الرئيسية (Hero Section) */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+    margin-top: 40px;
+}
+
+.hero-content {
+    flex: 1.2;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+
+.highlight {
+    color: var(--accent-color);
+}
+
+.hero-content h2 {
+    font-size: 1.8rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    max-width: 80%;
+}
+
+/* تصميم الأزرار */
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    padding: 12px 30px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn.primary {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+.btn.primary:hover {
+    background-color: #059669; /* درجة أغمق عند التمرير */
+    transform: translateY(-2px);
+}
+
+.btn.secondary {
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    background: transparent;
+}
+
+.btn.secondary:hover {
+    background-color: rgba(16, 185, 129, 0.1);
+    transform: translateY(-2px);
+}
+
+/* تصميم الصندوق البرمجي (بديل الصورة) */
+.hero-visual {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.code-box {
+    background-color: #1e293b;
+    padding: 30px;
+    border-radius: 12px;
+    border-left: 4px solid var(--accent-color);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.1rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+/* ألوان الكود داخل الصندوق */
+.code-box .keyword { color: #c678dd; } /* بنفسجي */
+.code-box .variable { color: #e5c07b; } /* أصفر */
+.code-box .property { color: #61afef; } /* أزرق فاتح */
+.code-box .string { color: #98c379; } /* أخضر فاتح */
+
+/* --- إضافات JavaScript --- */
+
+/* مؤشر الكتابة الوامض */
+.cursor {
+    display: inline-block;
+    width: 3px;
+    background-color: var(--accent-color);
+    animation: blink 1s infinite;
+    margin-left: 5px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* لون شريط التنقل عند التمرير لأسفل */
+nav.scrolled {
+    background-color: rgba(15, 23, 42, 0.98);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    padding: 1rem 8%; /* تقليل الحجم قليلاً ليعطي إحساساً بالديناميكية */
+    transition: all 0.3s ease;
+}
+
+/* --- التنسيقات المشتركة للأقسام --- */
+section {
+    padding: 100px 8%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 60px;
+    color: var(--text-main);
+}
+
+.section-title span {
+    color: var(--accent-color);
+}
+
+/* --- قسم من أنا (About) --- */
+.about-section {
+    background-color: #152033; /* درجة لونية مختلفة قليلاً لفصل الأقسام */
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-text p {
+    color: var(--text-muted);
+    font-size: 1.15rem;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.about-text strong {
+    color: var(--text-main);
+}
+
+.languages {
+    margin-top: 40px;
+    text-align: left;
+    background: rgba(16, 185, 129, 0.05); /* خلفية شفافة من اللون الأخضر */
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.languages h3 {
+    margin-bottom: 15px;
+    color: var(--accent-color);
+    font-size: 1.2rem;
+}
+
+.languages ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.languages li {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text-main);
+}
+
+/* --- قسم الخدمات (Services) --- */
+.services-section {
+    background-color: var(--bg-color);
+}
+
+.services-grid {
+    display: grid;
+    /* كود احترافي لعمل Grid يتجاوب تلقائياً مع الهواتف والحواسيب */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: #1e293b;
+    padding: 40px 30px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-bottom: 4px solid transparent;
+}
+
+/* تأثير الارتفاع عند تمرير الفأرة (Hover Effect) */
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    border-bottom: 4px solid var(--accent-color);
+}
+
+.service-card .icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: var(--text-main);
+}
+
+.service-card p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* --- قسم الأعمال (Portfolio) --- */
+.portfolio-section {
+    background-color: #152033; /* نفس لون خلفية قسم About للتباين */
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+.portfolio-card {
+    background-color: #1e293b;
+    border-radius: 12px;
+    overflow: hidden; /* لكي لا تخرج الصورة عن حدود الزوايا الدائرية */
+    transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-8px);
+}
+
+/* بديل مؤقت للصور حتى تقوم بإضافة صور حقيقية لمشاريعك */
+/* --- تعديلات الصور الاحترافية في قسم الأعمال --- */
+.portfolio-img {
+    height: 220px; /* زدنا الارتفاع قليلاً لتبدو الصورة أفخم */
+    width: 100%;
+    overflow: hidden; /* يمنع الصورة من الخروج من الإطار عند التكبير */
+    background-color: #2a374a;
+}
+
+.portfolio-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* يضمن تغطية الصورة للمساحة دون أن تنضغط أو تتشوه */
+    transition: transform 0.5s ease; /* حركة ناعمة وبطيئة للتكبير */
+}
+
+/* تأثير التكبير السينمائي عند مرور الفأرة على البطاقة بالكامل */
+.portfolio-card:hover .portfolio-img img {
+    transform: scale(1.1); /* تكبير الصورة بنسبة 10% */
+}
+
+.img-placeholder {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.portfolio-info {
+    padding: 25px;
+}
+
+.portfolio-info h3 {
+    font-size: 1.4rem;
+    color: var(--text-main);
+    margin-bottom: 10px;
+}
+
+.portfolio-info p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tech-stack span {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: var(--accent-color);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+/* --- قسم التواصل (Contact) --- */
+.contact-section {
+    background-color: var(--bg-color);
+    padding-bottom: 120px;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #1e293b;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-info h3 {
+    font-size: 2rem;
+    color: var(--text-main);
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.info-details p {
+    color: var(--text-main);
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.contact-form {
+    flex: 1.5;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    gap: 20px;
+}
+
+.input-group input {
+    flex: 1;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    background-color: #0f172a;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    color: var(--text-main);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--accent-color);
+}
+
+.contact-form button {
+    cursor: pointer;
+    align-self: flex-start; /* لكي لا يتمدد الزر بعرض الشاشة كاملة */
+}
+
+/* =========================================
+   التجاوب مع الهواتف الذكية (Responsive Design)
+   ========================================= */
+@media (max-width: 768px) {
+    /* 1. ترتيب شريط التنقل ليصبح عمودياً ومتوسطاً */
+    nav {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 15px;
+    }
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 0.95rem;
+    }
+    
+    /* 2. تعديل الواجهة الرئيسية (Hero) لتصبح العناصر فوق بعضها */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        margin-top: 130px;
+        gap: 40px;
+        padding: 0 5%;
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-content h2 {
+        font-size: 1.4rem;
+    }
+    .hero-content p {
+        margin: 0 auto 30px;
+        max-width: 100%;
+    }
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    /* 3. تصغير صندوق الأكواد ومنعه من تجاوز عرض الشاشة */
+    .code-box {
+        font-size: 0.85rem;
+        padding: 15px;
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    /* 4. تعديل المسافات العامة للأقسام */
+    section {
+        padding: 70px 5%;
+    }
+    .section-title {
+        font-size: 2.2rem;
+        margin-bottom: 40px;
+    }
+
+    /* 5. ترتيب نموذج التواصل ليصبح عمودياً بالكامل */
+    .contact-container {
+        flex-direction: column;
+        padding: 30px 20px;
+        gap: 30px;
+    }
+    .input-group {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* --- الأمان --- */
+.hidden-trap {
+    display: none !important; /* إخفاء تام عن المستخدم البشري */
+}
+
+/* --- تذييل الصفحة --- */
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: var(--bg-color);
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.social-links {
+    margin-bottom: 15px;
+}
+
+.social-links a {
+    color: var(--text-muted);
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+}
+
+footer p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
