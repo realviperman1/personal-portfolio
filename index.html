@@ -2,15 +2,14 @@
 <html lang="en">
 <head>
     <meta name="description" content="Portfolio of Abderrahmane Bennani (Viper Man) - Full-Stack Web Developer & QA Tester.">
-<meta name="keywords" content="Abderrahmane Bennani, Viper Man, Web Developer, Full Stack, QA Tester">
-<link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/1005/1005141.png">
+    <meta name="keywords" content="Abderrahmane Bennani, Viper Man, Web Developer, Full Stack, QA Tester">
+    <link rel="icon" type="image/png" href="Favicon viper man.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abderrahmane Bennani | Viper Man</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- شريط التنقل -->
     <nav>
         <a href="#home" class="logo">ViperMan</a>
         <ul class="nav-links">
@@ -20,9 +19,9 @@
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact Us</a></li>
         </ul>
+        <button id="theme-toggle" class="theme-btn">☀️</button>
     </nav>
 
-    <!-- الواجهة الرئيسية -->
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Hi, I'm <span class="highlight">Abderrahmane Bennani</span></h1>
@@ -35,7 +34,6 @@
             </div>
         </div>
 
-        <!-- التصميم البرمجي البديل للصورة الشخصية -->
         <div class="hero-visual">
             <div class="code-box">
                 <pre><code><span class="keyword">const</span> <span class="variable">developer</span> = {
@@ -48,8 +46,7 @@
         </div>
     </section>
 
-    <!-- قسم من أنا (About) -->
-    <section id="about" class="about-section">
+    <section id="about" class="about-section reveal">
         <h2 class="section-title">About <span>Me</span></h2>
         <div class="about-content">
             <div class="about-text">
@@ -68,27 +65,23 @@
         </div>
     </section>
 
-    <!-- قسم الخدمات (Services) -->
-    <section id="services" class="services-section">
+    <section id="services" class="services-section reveal">
         <h2 class="section-title">My <span>Services</span></h2>
         <div class="services-grid">
             
-            <!-- بطاقة الواجهة الأمامية -->
-            <div class="service-card">
+            <div class="service-card reveal">
                 <div class="icon">💻</div>
                 <h3>Front-End Development</h3>
                 <p>Crafting responsive, interactive, and user-friendly interfaces using modern HTML, CSS, and JavaScript.</p>
             </div>
 
-            <!-- بطاقة الواجهة الخلفية -->
-            <div class="service-card">
+            <div class="service-card reveal">
                 <div class="icon">⚙️</div>
                 <h3>Back-End & Databases</h3>
                 <p>Building secure and efficient server-side logic and managing databases using PHP and MySQL.</p>
             </div>
 
-            <!-- بطاقة اختبار الجودة -->
-            <div class="service-card">
+            <div class="service-card reveal">
                 <div class="icon">🔍</div>
                 <h3>QA Testing</h3>
                 <p>Rigorously testing web applications to identify bugs and ensure optimal performance before deployment.</p>
@@ -97,13 +90,11 @@
         </div>
     </section>
 
-    <!-- قسم الأعمال (Albums / Portfolio) -->
-    <section id="portfolio" class="portfolio-section">
+    <section id="portfolio" class="portfolio-section reveal">
         <h2 class="section-title">My <span>Albums</span></h2>
         <div class="portfolio-grid">
             
-            <!-- المشروع الأول (الموقع الذي نبنيه الآن!) -->
-            <div class="portfolio-card">
+            <div class="portfolio-card reveal">
                 <div class="portfolio-img">
                     <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80" alt="Viper Man Portfolio">
                 </div>
@@ -116,7 +107,7 @@
                 </div>
             </div>
 
-            <div class="portfolio-card">
+            <div class="portfolio-card reveal">
                 <div class="portfolio-img">
                     <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Business Landing Page">
                 </div>
@@ -131,8 +122,7 @@
         </div>
     </section>
 
-    <!-- قسم التواصل (Contact Us) -->
-    <section id="contact" class="contact-section">
+    <section id="contact" class="contact-section reveal">
         <h2 class="section-title">Contact <span>Us</span></h2>
         <div class="contact-container">
             
@@ -157,12 +147,15 @@
 
         </div>
     </section>
+    
     <footer>
-    <div class="social-links">
-        <a href="https://github.com/realviperman1" target="_blank">GitHub</a>
-        <a href="https://www.upwork.com/freelancers/~011d22fbdd93685856" target="_blank">Upwork</a>
-    </div>
-    <p>&copy; 2026 Abderrahmane Bennani (ViperMan). All Rights Reserved.</p>
-</footer>
+        <div class="social-links">
+            <a href="https://github.com/realviperman1" target="_blank">GitHub</a>
+            <a href="https://www.upwork.com/freelancers/~011d22fbdd93685856" target="_blank">Upwork</a>
+        </div>
+        <p>&copy; 2026 Abderrahmane Bennani (ViperMan). All Rights Reserved.</p>
+    </footer>
+    
+    <script src="script.js"></script>
 </body>
 </html>

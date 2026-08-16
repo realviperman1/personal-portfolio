@@ -587,3 +587,113 @@ footer p {
     color: var(--text-muted);
     font-size: 0.9rem;
 }
+
+/* =========================================
+   Custom Scrollbar
+   ========================================= */
+/* عرض شريط التمرير */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* لون خلفية مسار الشريط */
+::-webkit-scrollbar-track {
+    background: #1e1e1e; 
+}
+
+/* لون الجزء المتحرك من الشريط (هنا جعلناه أخضر أو بلون مميز) */
+::-webkit-scrollbar-thumb {
+    background: #00ff88; /* يمكنك تغيير هذا اللون ليناسب ثيم موقعك */
+    border-radius: 5px;
+}
+
+/* لون الشريط عند تمرير الماوس عليه */
+::-webkit-scrollbar-thumb:hover {
+    background: #00cc6a;
+}
+
+/* =========================================
+   تنسيق زر الوضع الليلي/النهاري
+   ========================================= */
+.theme-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-left: 15px;
+}
+
+.theme-btn:hover {
+    transform: scale(1.2); /* تكبير الزر قليلاً عند مرور الماوس */
+}
+
+/* =========================================
+   ألوان الوضع الفاتح (Light Mode)
+   ========================================= */
+/* عندما يأخذ الـ body كلاس light-mode ستتغير هذه الألوان */
+body.light-mode {
+    background-color: #f4f4f4;
+    color: #333333;
+}
+
+body.light-mode input, 
+body.light-mode textarea {
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid #cccccc;
+}
+
+/* =========================================
+   تعديلات الوضع الفاتح الشاملة (Light Mode Fixes)
+   ========================================= */
+
+/* 1. إجبار كل الأقسام والفوتر على التغيير للون الفاتح */
+body.light-mode section,
+body.light-mode footer {
+    background-color: #f9f9f9;
+    color: #333333;
+}
+
+/* 2. تحويل البطاقات (الخدمات، الأعمال، ونموذج التواصل) للأبيض مع ظل خفيف */
+body.light-mode .service-card,
+body.light-mode .portfolio-card, /* عدل اسم الكلاس إذا كان مختلفاً عندك */
+body.light-mode .contact-container,
+body.light-mode .contact-form input,
+body.light-mode .contact-form textarea {
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* 3. تعديل ألوان العناوين الرئيسية لتصبح داكنة ومقروءة */
+body.light-mode h1, 
+body.light-mode h2, 
+body.light-mode h3,
+body.light-mode p {
+    color: #111111;
+}
+
+/* 4. إبقاء مربع الكود (الترمينال) داكناً لأنه يمثل شاشة مبرمج! */
+/* ستحتاج إلى تغيير كلمة .code-box إلى اسم الكلاس الحقيقي الذي استخدمته لمربع الكود */
+body.light-mode .code-box {
+    background-color: #1e1e1e !important;
+    color: #a9b7c6 !important;
+}
+
+/* =========================================
+   تأثيرات الظهور (Scroll Reveal)
+   ========================================= */
+/* الحالة الأولى: العنصر مخفي ومسحوب للأسفل قليلاً */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+/* الحالة الثانية: العنصر يظهر ويعود لمكانه الطبيعي */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
